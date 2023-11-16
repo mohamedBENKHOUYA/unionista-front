@@ -10,12 +10,11 @@ jobs:
     environment: preprod
     steps:
       - name: remove existing folder front
-        uses: appleboy/ssh-action@v0.1.9
+        uses: appleboy/ssh-action@v1.0.0
         with:
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USER }}
           password: ${{ secrets.REMOTE_PASSWORD }}
-          port: ${{ secrets.REMOTE_PORT }}
           script: "[ ! -e /srv/front/* ] || rm -r /srv/front/*"
           
 
