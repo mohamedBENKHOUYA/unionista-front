@@ -16,7 +16,6 @@ jobs:
           key: ${{ secrets.REMOTE_SSH_KEY }}
           source: "."
           script: "[ ! -e /srv/front/* ] || rm -r /srv/front/*"
-          
 
   build:
     runs-on: ubuntu-latest
@@ -58,17 +57,3 @@ jobs:
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           SOURCE: "build/*"
           TARGET: "/srv/front"
-
-  restart-front:
-    runs-on: ubuntu-latest
-    environment: preprod
-    needs: deploy
-    steps:
-      - name: restart pm2 front service
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.REMOTE_HOST }}
-          username: ${{ secrets.REMOTE_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: ${{ secrets.REMOTE_PORT }}
-          script: "pm2 restart front"
