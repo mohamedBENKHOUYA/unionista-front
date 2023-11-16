@@ -13,7 +13,7 @@ jobs:
         with:
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          key: ${{ secrets.REMOTE_SSH_KEY }}
           port: ${{ secrets.REMOTE_PORT }}
           script: "[ ! -e /srv/front/* ] || rm -r /srv/front/*"
 
