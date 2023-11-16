@@ -1,6 +1,3 @@
-env:
-  NAME: "preprod"
-
 name: Deployment front (PREPROD)
 
 on:
@@ -20,11 +17,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.REMOTE_PORT }}
           script: "[ ! -e /srv/front/* ] || rm -r /srv/front/*"
-        run: |
-          echo ${{secrets.REMOTE_HOST}}
-          echo ${{secrets.REMOTE_USER}}
-          echo ${{secrets.REMOTE_PORT}}
-          echo ${{secrets.SSH_PRIVATE_KEY}}
+          
 
   build:
     runs-on: ubuntu-latest
