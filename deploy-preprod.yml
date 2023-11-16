@@ -7,14 +7,14 @@ on:
 jobs:
   remove:
     runs-on: ubuntu-latest
-    environment: preprod
     steps:
       - name: remove existing folder front
-        uses: appleboy/ssh-action@v1.0.0
+        uses: appleboy/ssh-action@0.1.4
         with:
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USER }}
-          password: ${{ secrets.REMOTE_PASSWORD }}
+          key: ${{ secrets.REMOTE_SSH_KEY }}
+          source: "."
           script: "[ ! -e /srv/front/* ] || rm -r /srv/front/*"
           
 
