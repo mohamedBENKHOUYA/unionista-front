@@ -15,11 +15,16 @@ jobs:
       - name: remove existing folder front
         uses: appleboy/ssh-action@master
         with:
-          host: "195.35.48.180"
+          host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.REMOTE_PORT }}
           script: "[ ! -e /srv/front/* ] || rm -r /srv/front/*"
+        run: |
+          echo ${{secrets.REMOTE_HOST}}
+          echo ${{secrets.REMOTE_USER}}
+          echo ${{secrets.REMOTE_PORT}}
+          echo ${{secrets.SSH_PRIVATE_KEY}}
 
   build:
     runs-on: ubuntu-latest
