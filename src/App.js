@@ -1,10 +1,15 @@
-import React from "react";
+import React from 'react';
+import RenderRoutes from './routes';
+import Header from 'components/header/Header';
+import Footer from 'components/footer/Footer';
 function App() {
-  return (
-    <div className="App">
-      <h2>Welcome to unionistaShop from react </h2>
-    </div>
-  );
+    return (
+        <>
+            <Header />
+            <RenderRoutes />
+            <Footer />
+        </>
+    );
 }
 
 export default App;
