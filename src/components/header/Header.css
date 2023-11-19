@@ -1,4 +1,4 @@
-.h_container {
+.h_container .h_top_part {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -20,42 +20,60 @@
 }
 
 .h_icon a {
-    --tooltip-gap: 20%;
+    --tooltip-gap: 10%;
     position: relative;
     padding: 9px;
-    /* border: 1px solid blue; */
     border-radius: 100vmax;
     display: grid;
     place-content: center;
     color: var(--clg-color-sem-text-primary);
 }
 
-.h_icon:hover a::before {
-    content: var(--nav-icon-title, '');
+.h_icon a::after,
+.h_icon a::before {
+    content: '';
     position: absolute;
-    top: calc(100% + var(--tooltip-gap));
+    transform: translateX(-50%) translateY(5px);
+    color: var(--clg-color-sem-text-on-surface-strong, 'white');
     left: 50%;
-    transform: translateX(-50%);
+    pointer-events: none;
+    transition: all 0.25s ease-out;
+}
+
+.h_icon a::before {
+    content: var(--nav-icon-title, '');
+    top: calc(100% + var(--tooltip-gap));
     width: fit-content;
     padding: 5px 8px;
     background-color: var(--clg-color-pal-blue-800);
     text-align: center;
     border-radius: 5px;
-    color: var(--clg-color-sem-text-on-surface-strong, 'white');
+    opacity: 0;
 }
-.h_icon:hover a::after {
-    content: '';
-    position: absolute;
+.h_icon a::after {
     bottom: calc(var(--tooltip-gap) * -1);
-    left: 50%;
-    transform: translateX(-50%);
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
     border-bottom: 5px solid var(--clg-color-pal-blue-800);
     border-top: 5px solid transparent;
+    opacity: 0;
+}
+
+
+.h_icon:hover a::before,
+.h_icon:hover a::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
 }
 
 .h_icon:hover a {
     transition: background-color 0.25s ease-in-out;
     background-color: var(--clg-color-pal-blue-150);
+}
+
+.h_container .h_sub_part {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 0.25rem;
 }

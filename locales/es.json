@@ -1,7 +1,8 @@
 {
     "page-not-found": {
-        "title": "404 - Page non trouvée",
-        "message-1": "la page que vous recherchez a peut-être été supprimée",
-        "message-2": "son nom a changé ou est temporairement indisponible"
+        "title": "404 - página no encontrada",
+        "message-1": "Es posible que la página que estás buscando haya sido eliminada.",
+        "message-2": "su nombre cambió o no está disponible temporalmente",
+        "go-back": "ir a la página de inicio"
     }
 }

@@ -18,5 +18,14 @@
     "plugins": ["react", "react-hooks"],
     "rules": {
         //add customize rules here as per your project's needs
+        // "react/prop-types": "off"
+    },
+    "globals": {
+        "require": true,
+        "process": true,
+        "module": true,
+        "__dirname": true,
+        "__filename": true,
+        "Buffer": true
     }
 }

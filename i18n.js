@@ -1,5 +1,6 @@
-import fr from '../locales/fr.json';
-import en from '../locales/en.json';
+import fr from './locales/fr.json';
+import en from './locales/en.json';
+import es from './locales/es.json';
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
@@ -11,7 +12,7 @@ const resources = {
         translation: en,
     },
     es: {
-        translation: en,
+        translation: es,
     },
 };
 

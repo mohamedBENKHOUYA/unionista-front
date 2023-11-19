@@ -765,6 +765,8 @@
         --clg-color-sem-background-surface-action-primary-strong
     );
     --clg-color-app-input-text: var(--clg-color-sem-text-primary);
+    --error-clr: rgba(166, 26, 46, 0.35);
+    --bg-error-clr: #fddcd8;
 }
 
 *,
@@ -773,4 +775,42 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, button {
+    font: revert;
+    border: none;
+    background: none;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url('/public/Roboto/Roboto-Regular.ttf');
+    font-weight: 500;
+}
+@font-face {
+    font-family: Roboto;
+    src: url('/public/Roboto/Roboto-Bold.ttf');
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url('/public/Roboto/Roboto-Italic.ttf');
+    font-style: italic;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url('/public/Montserrat/Montserrat-VariableFont_wght.ttf');
+}
+@font-face {
+    font-family: Montserrat;
+    src: url('/public/Montserrat/Montserrat-Italic-VariableFont_wght.ttf');
+    font-style: italic;
 }

@@ -1,15 +1,23 @@
 import { useTranslation } from 'react-i18next';
 import React from 'react';
+import './NotFound.css';
+import ActionButton from 'components/action-button/ActionButton';
 
 const NotFound = () => {
     const { t } = useTranslation();
 
     return (
-        <div>
+        <div className="nf_container">
             <h2>Oops!</h2>
-            <p>{t('page-not-found.title')}</p>
-            {t('page-not-found.message-1')} <br />
-            {t('page-not-found.message-2')}
+            <h6>{t('page-not-found.title')}</h6>
+            <div>
+                <p>{t('page-not-found.message-1')}</p>
+                <p>{t('page-not-found.message-2')}</p>
+            </div>
+
+            <ActionButton isLink={true} to="/" radius="pilled" boxShadow={true}>
+                <p className="nf_go_back_btn">{t('page-not-found.go-back')}</p>
+            </ActionButton>
         </div>
     );
 };

@@ -1,0 +1,17 @@
+.ic_container {
+    border: 1px solid var(--clg-color-sem-text-primary);
+    padding: 0.25rem 0.5rem;
+}
+
+.ic_container.rounded {
+    border-radius: 1rem;
+}
+
+.ic_container.error {
+    border-color: var(--error-clr);
+    background-color: var(--bg-error-clr);
+}
+
+.ic_container:focus-within {
+    outline: 2px solid var(--clg-color-pal-blue-300);
+}

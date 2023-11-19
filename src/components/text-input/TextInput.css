@@ -1,0 +1,9 @@
+.ti_container {
+    border: none;
+    background: transparent;
+    outline: none;
+}
+
+.ti_container:focus, .ti_container:focus-visible {
+    /* border: none; */
+}

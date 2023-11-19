@@ -2,6 +2,7 @@
     "page-not-found": {
         "title": "404 - Page non trouvée",
         "message-1": "la page que vous recherchez a peut-être été supprimée",
-        "message-2": "son nom a changé ou est temporairement indisponible"
+        "message-2": "son nom a changé ou est temporairement indisponible",
+        "go-back": "aller à la page d'accueil"
     }
 }
