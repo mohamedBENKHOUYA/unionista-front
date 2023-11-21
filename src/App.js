@@ -5,6 +5,7 @@ import Footer from 'components/footer/Footer';
 import 'App.css';
 import MenuDrawer from 'components/menu_drawer/MenuDrawer';
 import { useSelector } from 'react-redux';
+
 // import { increment, decrement } from '../redux/slices/counterSlice';
 // import { toggleDrawer } from '../redux/slices/headerSlice';
 
@@ -21,6 +22,7 @@ function App() {
         'etsy registry',
     ];
     const isDrawerShowed = useSelector((state) => state.header.isDrawerShowed);
+
     return (
         <div className="app_container">
             <Header />

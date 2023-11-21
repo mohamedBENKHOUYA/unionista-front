@@ -8,8 +8,11 @@ import InputControl from 'components/input-control/InputControl';
 import { toggleDrawer } from 'redux/slices/headerSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import Hamburger from 'components/Hamburger/Hamburger';
+import SearchIcon from 'icons/search-icon/SearchIcon';
+import { useTranslation } from 'react-i18next';
 
 const Header = () => {
+    const { t } = useTranslation();
     const dispatch = useDispatch();
     const isDrawerShowed = useSelector((state) => state.header.isDrawerShowed);
     return (
@@ -54,8 +57,12 @@ const Header = () => {
                 >
                     <Hamburger />
                 </button>
-                <InputControl classes={['rounded error']}>
-                    <TextInput />
+                <InputControl classes={['pilled']}>
+                    <TextInput
+                        placeholder={t('header.search-input-placeholder')}
+                    >
+                        <SearchIcon />
+                    </TextInput>
                 </InputControl>
             </div>
         </div>

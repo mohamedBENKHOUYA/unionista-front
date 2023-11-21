@@ -4,5 +4,12 @@
         "message-1": "the page you are looking for might have been removed",
         "message-2": "had its name changed or is temporarily unavailable",
         "go-back": "go to homepage"
+    },
+    "header":{
+        "search-input-placeholder": "Search for anything"
+    },
+    "drawer": {
+        "title": "browse categories"
     }
+    
 }

@@ -1,7 +1,13 @@
+.h_container {
+    position: relative;
+    z-index: 1;
+}
+
 .h_container .h_top_part {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     color: var(--clg-color-sem-text-primary);
 }
 
@@ -16,7 +22,7 @@
 }
 .h_logo img {
     max-width: 100px;
-    border: 1px solid;
+    /* border: 1px solid; */
 }
 
 .h_icon a {
@@ -38,6 +44,7 @@
     left: 50%;
     pointer-events: none;
     transition: all 0.25s ease-out;
+    z-index: 1;
 }
 
 .h_icon a::before {
@@ -59,7 +66,6 @@
     opacity: 0;
 }
 
-
 .h_icon:hover a::before,
 .h_icon:hover a::after {
     opacity: 1;
@@ -72,8 +78,11 @@
 }
 
 .h_container .h_sub_part {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: clamp(0rem, 2vw, 1rem);
     align-items: center;
-    justify-content: space-between;
-    padding-inline: 0.25rem;
+    /* padding-inline: 0.25rem; */
 }
+
+

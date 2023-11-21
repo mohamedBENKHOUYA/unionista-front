@@ -1,9 +1,37 @@
 .ti_container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.ti_container input {
+    flex: 1 1 0;
     border: none;
     background: transparent;
     outline: none;
+    width: 100%;
 }
 
-.ti_container:focus, .ti_container:focus-visible {
-    /* border: none; */
+.ti_container .ti_input_icon {
+    position: relative;
+    line-height: 0;
+    aspect-ratio: 1;
+    color: var(--clr-secondary-white);
+}
+.ti_container .ti_input_icon::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-color: var(--clg-color-sem-text-brand);
+    box-shadow: 0 0 0 5px var(--clg-color-sem-text-brand);
+    border-radius: 100%;
+    transition:
+        border-radius 125ms ease,
+        box-shadow 125ms ease;
+}
+.ti_container:focus-within .ti_input_icon::before,
+.ti_container:hover .ti_input_icon::before {
+    border-radius: 0;
+    box-shadow: 0 0 0 10px var(--clg-color-sem-text-brand);
 }

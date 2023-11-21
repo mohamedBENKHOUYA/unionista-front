@@ -4,5 +4,11 @@
         "message-1": "Es posible que la página que estás buscando haya sido eliminada.",
         "message-2": "su nombre cambió o no está disponible temporalmente",
         "go-back": "ir a la página de inicio"
+    },
+    "header": {
+        "search-input-placeholder": "Buscar cualquier cosa"
+    },
+    "drawer": {
+        "title": "examinar las categorías"
     }
 }
