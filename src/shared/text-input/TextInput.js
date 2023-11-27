@@ -29,7 +29,11 @@ const TextInput = (props) => {
                 placeholder={placeholder}
                 onInput={(e) => setText(e.target.value)}
             />
-            {Icon && <div className="ti_input_icon">{Icon}</div>}
+            {Icon && (
+                <label htmlFor={labelId} className="ti_input_icon">
+                    {Icon}
+                </label>
+            )}
         </div>
     );
 };
