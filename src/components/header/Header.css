@@ -12,31 +12,50 @@
 }
 
 .h_nav_bar {
-    flex: 0.45 1 0;
+    /* flex: 0.45 1 0; */
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 0rem;
-    max-width: var(--max-nav-gap);
+    margin-left: auto;
     list-style: none;
+    font-family: GraphikFont;
 }
 .h_logo img {
-    max-width: 100px;
+    max-width: 75px;
     /* border: 1px solid; */
 }
 
-.h_icon a {
+.h_nav_item {
     --tooltip-gap: 10%;
+}
+.h_nav_item a {
+    display: grid;
+    place-content: center;
+
+    color: var(--clr-secondary);
+    text-decoration: none;
+}
+.h_nav_item {
     position: relative;
     padding: 9px;
     border-radius: 100vmax;
-    display: grid;
-    place-content: center;
-    color: var(--clg-color-sem-text-primary);
 }
 
-.h_icon a::after,
-.h_icon a::before {
+.h_nav_item:hover {
+    transition: background-color 0.25s ease-in-out;
+    background-color: var(--clg-color-pal-blue-150);
+}
+.h_nav_item.h_text:hover {
+    background-color: var(--clr-grey-very-light);
+}
+
+.h_nav_item.h_text {
+    font-weight: 400;
+    font-size: clamp(0.65rem, 3.5vw, 1rem);
+}
+
+.h_nav_item a::after,
+.h_nav_item a::before {
     content: '';
     position: absolute;
     transform: translateX(-50%) translateY(5px);
@@ -47,7 +66,7 @@
     z-index: 1;
 }
 
-.h_icon a::before {
+.h_nav_item.h_icon a::before {
     content: var(--nav-icon-title, '');
     top: calc(100% + var(--tooltip-gap));
     width: fit-content;
@@ -57,7 +76,7 @@
     border-radius: 5px;
     opacity: 0;
 }
-.h_icon a::after {
+.h_nav_item.h_icon a::after {
     bottom: calc(var(--tooltip-gap) * -1);
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
@@ -66,15 +85,10 @@
     opacity: 0;
 }
 
-.h_icon:hover a::before,
-.h_icon:hover a::after {
+.h_nav_item:hover a::before,
+.h_nav_item:hover a::after {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
-}
-
-.h_icon:hover a {
-    transition: background-color 0.25s ease-in-out;
-    background-color: var(--clg-color-pal-blue-150);
 }
 
 .h_container .h_sub_part {
@@ -84,5 +98,3 @@
     align-items: center;
     /* padding-inline: 0.25rem; */
 }
-
-

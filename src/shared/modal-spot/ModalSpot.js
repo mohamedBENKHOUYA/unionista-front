@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import CloseIcon from 'icons/close-icon/CloseIcon';
-import './MenuDrawer.css';
+import './ModalSpot.css';
 import { useDispatch } from 'react-redux';
 import { toggleBottomModal } from 'redux/slices/headerSlice';
-import DropListArrowIcon from 'icons/drop-list-arrow/DropListArrowIcon';
+// import DropListArrowIcon from 'icons/drop-list-arrow/DropListArrowIcon';
 import { useTranslation } from 'react-i18next';
 import clsx from 'clsx';
+import CloseIcon from 'icons/close-icon/CloseIcon';
 
-const MenuDrawer = (props) => {
+const ModalSpot = (props) => {
     const dispatch = useDispatch();
     const { t } = useTranslation();
-    const { menuItems } = props;
+    const { children } = props;
     const [isDrawerQuitting, setIsDrawerQuitting] = useState(false);
 
     const onCloseDrawer = (duration) => {
@@ -28,44 +28,35 @@ const MenuDrawer = (props) => {
 
     return (
         <div
-            className={clsx('md_container', {
-                md_quitting: isDrawerQuitting,
+            className={clsx('ms_container', {
+                ms_quitting: isDrawerQuitting,
             })}
             onClick={() => onCloseDrawer(300)}
         >
             {/*placeholder to close menuDrawer quickly*/}
-            <input id="md_close_checkbox" type="checkbox" />
+            <input id="ms_close_checkbox" type="checkbox" />
             <button
-                className={clsx('md_content')}
+                className={clsx('ms_content')}
                 onClick={(e) => e.stopPropagation()}
             >
-                <div className="md_title_container">
+                <div className="ms_title_container">
                     <span>{/*placeholder*/}</span>
                     <h2>{t('drawer.title')}</h2>
                     <label
-                        htmlFor="md_close_checkbox"
-                        className={clsx('md_close_icon')}
+                        htmlFor="ms_close_checkbox"
+                        className={clsx('ms_close_icon')}
                     >
                         <CloseIcon />
                     </label>
                 </div>
-                <ul>
-                    {menuItems.map((menuItem) => {
-                        return (
-                            <li key={menuItem}>
-                                <p>{menuItem}</p>
-                                <DropListArrowIcon />
-                            </li>
-                        );
-                    })}
-                </ul>
+                {children}
             </button>
         </div>
     );
 };
 
-MenuDrawer.propTypes = {
-    menuItems: PropTypes.arrayOf(PropTypes.string),
+ModalSpot.propTypes = {
+    children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
 };
 
-export default MenuDrawer;
+export default ModalSpot;

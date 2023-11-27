@@ -5,8 +5,19 @@
         "message-2": "had its name changed or is temporarily unavailable",
         "go-back": "go to homepage"
     },
+    "sign-in": {
+        "sign-in": "Sign in",
+        "register": "Register",
+        "email-label": "Email address",
+        "password-label": "Password",
+        "remember-me": "Stay signed in",
+        "forgot-password": "Forgot your password?",
+        "divider-title": "or",
+        "sso-google-title": "continue with google"
+    },
     "header":{
         "search-input-placeholder": "Search for anything"
+        
     },
     "drawer": {
         "title": "browse categories"

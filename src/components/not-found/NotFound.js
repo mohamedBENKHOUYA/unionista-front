@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import React from 'react';
 import './NotFound.css';
-import ActionButton from 'components/action-button/ActionButton';
+import ActionButton from 'shared/action-button/ActionButton';
 
 const NotFound = () => {
     const { t } = useTranslation();

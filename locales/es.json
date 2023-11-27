@@ -5,6 +5,16 @@
         "message-2": "su nombre cambió o no está disponible temporalmente",
         "go-back": "ir a la página de inicio"
     },
+    "sign-in": {
+        "sign-in": "Sign in",
+        "register": "Register",
+        "email-label": "Dirección de correo electrónico",
+        "password-label": "Contraseña",
+        "remember-me": "Permanecer registrado",
+        "forgot-password": "¿Olvidaste tu contraseña?",
+        "divider-title": "o",
+        "sso-google-title": "continuar con google"
+    },
     "header": {
         "search-input-placeholder": "Buscar cualquier cosa"
     },

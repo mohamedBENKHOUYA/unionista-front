@@ -5,11 +5,20 @@
         "message-2": "son nom a changé ou est temporairement indisponible",
         "go-back": "aller à la page d'accueil"
     },
+    "sign-in": {
+        "title": "Sign in",
+        "register": "Register",
+        "email-label": "Adresse e-mail",
+        "password-label": "Mot de passe",
+        "remember-me": "Rester connecté",
+        "forgot-password": "Mot de passe oublié?",
+        "divider-title": "ou",
+        "sso-google-title": "continuer avec Google"
+    },
     "header": {
         "search-input-placeholder": "Recherche"
     },
     "drawer": {
         "title": "Parcourir les catégories"
     }
-
 }

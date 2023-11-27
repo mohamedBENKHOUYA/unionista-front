@@ -3,15 +3,19 @@ import { createSlice } from '@reduxjs/toolkit';
 const headerSlider = createSlice({
     name: 'header',
     initialState: {
-        isDrawerShowed: false,
+        isBottomModalOpen: false,
+        currentContent: null,
     },
     reducers: {
-        toggleDrawer(state, action) {
-            state.isDrawerShowed = action.payload;
+        toggleBottomModal(state, action) {
+            ({
+                isBottomModalOpen: state.isBottomModalOpen,
+                currentContent: state.currentContent,
+            } = action.payload);
         },
     },
 });
 
-export const { toggleDrawer } = headerSlider.actions;
+export const { toggleBottomModal } = headerSlider.actions;
 
 export default headerSlider.reducer;

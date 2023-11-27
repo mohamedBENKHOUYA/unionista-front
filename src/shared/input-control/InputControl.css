@@ -1,0 +1,26 @@
+.ic_container {
+    isolation: isolate;
+    border: 1px solid var(--clr-secondary);
+    /* padding: 0.5rem 0.5rem; */
+    overflow: hidden;
+}
+.ic_container.border_light {
+    border-color: var(--clr-black-light);
+}
+.ic_container.inset_shadow {
+    box-shadow: var(--inset-shadow-200);
+}
+
+.ic_container.pilled {
+    border-radius: 100vmax;
+}
+
+.ic_container.error {
+    border-color: var(--error-clr);
+    background-color: var(--bg-error-clr);
+}
+
+.ic_container:focus-within {
+    outline: var(--input-focus-outline);
+    outline-offset: 1.5px;
+}
